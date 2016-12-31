@@ -6,12 +6,12 @@ class AbstractTransformerTest {
 
     private static final AbstractTransformer transformer = new AbstractTransformer() {
         @Override
-        protected String retrieveNumeral() {
+        protected String getNumeral() {
             return 'YY'
         }
 
         @Override
-        protected int retrieveNumber() {
+        protected int getNumber() {
             return 30
         }
     }

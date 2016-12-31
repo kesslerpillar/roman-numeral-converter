@@ -1,0 +1,76 @@
+package com.pillartechnology.numeral.transformation
+
+import org.junit.Test
+
+class TransformerFactoryTest {
+
+    @Test
+    void createOne() {
+        assertTransformer(TransformerFactory.createOne(), 'I', 1)
+    }
+
+    @Test
+    void createFour() {
+        assertTransformer(TransformerFactory.createFour(), 'IV', 4)
+    }
+
+    @Test
+    void createFive() {
+        assertTransformer(TransformerFactory.createFive(), 'V', 5)
+    }
+
+    @Test
+    void createNine() {
+        assertTransformer(TransformerFactory.createNine(), 'IX', 9)
+    }
+
+    @Test
+    void createTen() {
+        assertTransformer(TransformerFactory.createTen(), 'X', 10)
+    }
+
+    @Test
+    void createForty() {
+        assertTransformer(TransformerFactory.createForty(), 'XL', 40)
+    }
+
+    @Test
+    void createFifty() {
+        assertTransformer(TransformerFactory.createFifty(), 'L', 50)
+    }
+
+    @Test
+    void createNinety() {
+        assertTransformer(TransformerFactory.createNinety(), 'XC', 90)
+    }
+
+    @Test
+    void createOneHundred() {
+        assertTransformer(TransformerFactory.createOneHundred(), 'C', 100)
+    }
+
+    @Test
+    void createFourHundred() {
+        assertTransformer(TransformerFactory.createFourHundred(), 'CD', 400)
+    }
+
+    @Test
+    void createFiveHundred() {
+        assertTransformer(TransformerFactory.createFiveHundred(), 'D', 500)
+    }
+
+    @Test
+    void createNineHundred() {
+        assertTransformer(TransformerFactory.createNineHundred(), 'CM', 900)
+    }
+
+    @Test
+    void createOneThousand() {
+        assertTransformer(TransformerFactory.createOneThousand(), 'M', 1000)
+    }
+
+    private static void assertTransformer(AbstractTransformer transformer, String expectedNumeral, int expectedNumber) {
+        assert expectedNumeral == transformer.getNumeral()
+        assert expectedNumber == transformer.getNumber()
+    }
+}

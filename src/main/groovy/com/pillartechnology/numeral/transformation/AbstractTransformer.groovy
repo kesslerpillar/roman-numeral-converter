@@ -5,14 +5,14 @@ abstract class AbstractTransformer implements Transformer {
     @Override
     Transformation transform(final Transformation transformation) {
 
-        int total = transformation.part.count(retrieveNumeral()) * retrieveNumber()
+        int total = transformation.part.count(getNumeral()) * getNumber()
 
-        String part = transformation.part.replaceAll(retrieveNumeral(), '')
+        String part = transformation.part.replaceAll(getNumeral(), '')
 
         return new Transformation(part, transformation.total + total)
     }
 
-    abstract protected String retrieveNumeral()
+    abstract protected String getNumeral()
 
-    abstract protected int retrieveNumber()
+    abstract protected int getNumber()
 }

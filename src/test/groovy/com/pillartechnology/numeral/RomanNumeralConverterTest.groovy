@@ -48,4 +48,14 @@ class RomanNumeralConverterTest {
     void romanNumeralNineToNumber() {
         assert 9 == RomanNumeralConverter.toNumber("IX")
     }
+
+    @Test
+    void romanNumeralTenToNumber() {
+        assert 10 == RomanNumeralConverter.toNumber("X")
+    }
+
+    @Test
+    void romanNumeralTwelveToNumber() {
+        assert 12 == RomanNumeralConverter.toNumber("XII")
+    }
 }
