@@ -6,56 +6,60 @@ class RomanNumeralConverterTest {
 
     @Test
     void romanNumeralOneToNumber() {
-        assert 1 == RomanNumeralConverter.toNumber("I")
+        assertConversion(1, 'I')
     }
 
     @Test
     void romanNumeralTwoToNumber() {
-        assert 2 == RomanNumeralConverter.toNumber("II")
+        assertConversion(2, "II")
     }
 
     @Test
     void romanNumeralThreeToNumber() {
-        assert 3 == RomanNumeralConverter.toNumber("III")
+        assertConversion(3, "III")
     }
 
     @Test
     void romanNumeralFourToNumber() {
-        assert 4 == RomanNumeralConverter.toNumber("IV")
+        assertConversion(4, "IV")
     }
 
     @Test
     void romanNumeralFiveToNumber() {
-        assert 5 == RomanNumeralConverter.toNumber("V")
+        assertConversion(5, "V")
     }
 
     @Test
     void romanNumeralSixToNumber() {
-        assert 6 == RomanNumeralConverter.toNumber("VI")
+        assertConversion(6, "VI")
     }
 
     @Test
     void romanNumeralSevenToNumber() {
-        assert 7 == RomanNumeralConverter.toNumber("VII")
+        assertConversion(7, "VII")
     }
 
     @Test
     void romanNumeralEightToNumber() {
-        assert 8 == RomanNumeralConverter.toNumber("VIII")
+        assertConversion(8, "VIII")
     }
 
     @Test
     void romanNumeralNineToNumber() {
-        assert 9 == RomanNumeralConverter.toNumber("IX")
+        assertConversion(9, "IX")
     }
 
     @Test
     void romanNumeralTenToNumber() {
-        assert 10 == RomanNumeralConverter.toNumber("X")
+        assertConversion(10, "X")
     }
 
     @Test
     void romanNumeralTwelveToNumber() {
-        assert 12 == RomanNumeralConverter.toNumber("XII")
+        assertConversion(12, "XII")
+    }
+
+    private void assertConversion(int expectedNumber, String numeral) {
+        assert expectedNumber == RomanNumeralConverter.toNumber(numeral)
     }
 }
