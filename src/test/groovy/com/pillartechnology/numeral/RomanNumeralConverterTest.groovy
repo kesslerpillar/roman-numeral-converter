@@ -5,61 +5,25 @@ import org.junit.Test
 class RomanNumeralConverterTest {
 
     @Test
-    void romanNumeralOneToNumber() {
-        assertConversion(1, 'I')
+    void romanNumeralConversion() {
+        [1 : 'I',
+         2 : 'II',
+         3 : 'III',
+         4 : 'IV',
+         5 : 'V',
+         6 : 'VI',
+         7 : 'VII',
+         8 : 'VIII',
+         9 : 'IX',
+         10: 'X',
+         12: 'XII',
+        ].each { int expectedNumber, String numeral ->
+            assertConversion(expectedNumber, numeral)
+        }
+
     }
 
-    @Test
-    void romanNumeralTwoToNumber() {
-        assertConversion(2, "II")
-    }
-
-    @Test
-    void romanNumeralThreeToNumber() {
-        assertConversion(3, "III")
-    }
-
-    @Test
-    void romanNumeralFourToNumber() {
-        assertConversion(4, "IV")
-    }
-
-    @Test
-    void romanNumeralFiveToNumber() {
-        assertConversion(5, "V")
-    }
-
-    @Test
-    void romanNumeralSixToNumber() {
-        assertConversion(6, "VI")
-    }
-
-    @Test
-    void romanNumeralSevenToNumber() {
-        assertConversion(7, "VII")
-    }
-
-    @Test
-    void romanNumeralEightToNumber() {
-        assertConversion(8, "VIII")
-    }
-
-    @Test
-    void romanNumeralNineToNumber() {
-        assertConversion(9, "IX")
-    }
-
-    @Test
-    void romanNumeralTenToNumber() {
-        assertConversion(10, "X")
-    }
-
-    @Test
-    void romanNumeralTwelveToNumber() {
-        assertConversion(12, "XII")
-    }
-
-    private void assertConversion(int expectedNumber, String numeral) {
+    static private void assertConversion(int expectedNumber, String numeral) {
         assert expectedNumber == RomanNumeralConverter.toNumber(numeral)
     }
 }
