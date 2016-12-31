@@ -1,6 +1,6 @@
 package com.pillartechnology.numeral.transformation
 
-abstract class AbstractTransformer implements NumeralTransformer {
+abstract class AbstractTransformer implements NumeralTransformer, NumberTransformer {
 
     @Override
     Transformation numeralToNumber(final Transformation transformation) {
@@ -9,7 +9,20 @@ abstract class AbstractTransformer implements NumeralTransformer {
 
         String part = transformation.part.replaceAll(getNumeral(), '')
 
-        return new Transformation(part, transformation.total + total)
+        new Transformation(part, transformation.total + total)
+    }
+
+    @Override
+    Transformation numberToNumeral(final Transformation transformation) {
+        int total = transformation.total
+        String part = transformation.part
+
+        while (total >= getNumber()) {
+            total -= getNumber()
+            part += getNumeral()
+        }
+
+        new Transformation(part, total)
     }
 
     abstract protected String getNumeral()
