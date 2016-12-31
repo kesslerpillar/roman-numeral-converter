@@ -18,21 +18,21 @@ class AbstractTransformerTest {
 
     @Test
     void transformNonFour() {
-        Transformation transformation = transformer.transform(new Transformation('XXX', 0))
+        Transformation transformation = transformer.numeralToNumber(new Transformation('XXX', 0))
         assert 'XXX' == transformation.part
         assert 0 == transformation.total
     }
 
     @Test
     void transformWithFour() {
-        Transformation transformation = transformer.transform(new Transformation('XYY', 0))
+        Transformation transformation = transformer.numeralToNumber(new Transformation('XYY', 0))
         assert 'X' == transformation.part
         assert 30 == transformation.total
     }
 
     @Test
     void transformWithExistingTotal() {
-        Transformation transformation = transformer.transform(new Transformation('XYY', 10))
+        Transformation transformation = transformer.numeralToNumber(new Transformation('XYY', 10))
         assert 'X' == transformation.part
         assert 40 == transformation.total
     }

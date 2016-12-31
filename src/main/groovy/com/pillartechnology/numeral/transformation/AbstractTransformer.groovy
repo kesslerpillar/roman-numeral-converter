@@ -1,9 +1,9 @@
 package com.pillartechnology.numeral.transformation
 
-abstract class AbstractTransformer implements Transformer {
+abstract class AbstractTransformer implements NumeralTransformer {
 
     @Override
-    Transformation transform(final Transformation transformation) {
+    Transformation numeralToNumber(final Transformation transformation) {
 
         int total = transformation.part.count(getNumeral()) * getNumber()
 

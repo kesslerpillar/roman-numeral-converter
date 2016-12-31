@@ -15,7 +15,7 @@ class RomanNumeralConverter {
         Transformation transformation = new Transformation(numeral, 0)
 
         TRANSFORMERS.each { transformer ->
-            transformation = transformer.transform(transformation)
+            transformation = transformer.numeralToNumber(transformation)
         }
 
         transformation.total
