@@ -23,4 +23,9 @@ class RomanNumeralConverterTest {
     void romanNumeralFourToNumber() {
         assert 4 == RomanNumeralConverter.toNumber("IV")
     }
+
+    @Test
+    void romanNumeralFiveToNumber() {
+        assert 5 == RomanNumeralConverter.toNumber("V")
+    }
 }
