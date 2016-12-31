@@ -5,7 +5,7 @@ class Transformation {
     private int total
 
     Transformation(String part, int total) {
-        this.part = part
+        this.part = part.toUpperCase()
         this.total = total
     }
 

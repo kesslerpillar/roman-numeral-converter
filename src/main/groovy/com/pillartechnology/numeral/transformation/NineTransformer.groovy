@@ -1,16 +1,14 @@
 package com.pillartechnology.numeral.transformation
 
-class NineTransformer implements Transformer {
-
-    static final def NINE = [numeral: 'IX', number: 9]
+class NineTransformer extends AbstractTransformer {
 
     @Override
-    Transformation transform(final Transformation transformation) {
+    protected String retrieveNumeral() {
+        return 'IX'
+    }
 
-        int total = transformation.part.count(NINE.numeral) * NINE.number
-
-        String part = transformation.part.replaceAll(NINE.numeral, '')
-
-        return new Transformation(part, transformation.total + total)
+    @Override
+    protected int retrieveNumber() {
+        return 9
     }
 }

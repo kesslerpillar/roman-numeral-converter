@@ -1,16 +1,14 @@
 package com.pillartechnology.numeral.transformation
 
-class FourTransformer implements Transformer {
-
-    static final def FOUR = [numeral: 'IV', number: 4]
+class FourTransformer extends AbstractTransformer {
 
     @Override
-    Transformation transform(final Transformation transformation) {
+    protected String retrieveNumeral() {
+        return 'IV'
+    }
 
-        int total = transformation.part.count(FOUR.numeral) * FOUR.number
-
-        String part = transformation.part.replaceAll(FOUR.numeral, '')
-
-        return new Transformation(part, transformation.total + total)
+    @Override
+    protected int retrieveNumber() {
+        return 4
     }
 }
