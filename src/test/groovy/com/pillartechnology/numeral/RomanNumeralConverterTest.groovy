@@ -18,4 +18,9 @@ class RomanNumeralConverterTest {
     void romanNumeralThreeToNumber() {
         assert 3 == RomanNumeralConverter.toNumber("III")
     }
+
+    @Test
+    void romanNumeralFourToNumber() {
+        assert 4 == RomanNumeralConverter.toNumber("IV")
+    }
 }
