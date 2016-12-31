@@ -28,4 +28,24 @@ class RomanNumeralConverterTest {
     void romanNumeralFiveToNumber() {
         assert 5 == RomanNumeralConverter.toNumber("V")
     }
+
+    @Test
+    void romanNumeralSixToNumber() {
+        assert 6 == RomanNumeralConverter.toNumber("VI")
+    }
+
+    @Test
+    void romanNumeralSevenToNumber() {
+        assert 7 == RomanNumeralConverter.toNumber("VII")
+    }
+
+    @Test
+    void romanNumeralEightToNumber() {
+        assert 8 == RomanNumeralConverter.toNumber("VIII")
+    }
+
+    @Test
+    void romanNumeralNineToNumber() {
+        assert 9 == RomanNumeralConverter.toNumber("IX")
+    }
 }
