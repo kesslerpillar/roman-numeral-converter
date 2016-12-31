@@ -14,8 +14,8 @@ class RomanNumeralConverter {
     static int toNumber(String numeral) {
         Transformation transformation = new Transformation(numeral, 0)
 
-        TRANSFORMERS.each { tranformer ->
-            transformation = tranformer.transform(transformation)
+        TRANSFORMERS.each { transformer ->
+            transformation = transformer.transform(transformation)
         }
 
         transformation.total
