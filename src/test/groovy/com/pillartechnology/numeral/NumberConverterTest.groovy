@@ -6,8 +6,7 @@ class NumberConverterTest {
 
     @Test
     void convertToRomanNumeral() {
-        [4000: 'MMMM', 4900: 'MMMMCM',
-         1   : 'I', 2: 'II',
+        [1   : 'I', 2: 'II',
          3   : 'III', 4: 'IV',
          5   : 'V', 6: 'VI',
          7   : 'VII', 8: 'VIII',
@@ -22,7 +21,7 @@ class NumberConverterTest {
          444 : 'CDXLIV', 500: 'D',
          667 : 'DCLXVII', 900: 'CM',
          944 : 'CMXLIV', 1000: 'M',
-         1444: 'MCDXLIV', 4999: 'MMMMCMXCIX',
+         1444: 'MCDXLIV', 3999: 'MMMCMXCIX',
         ].each { int number, String expecteNumeral ->
             assertConversion(number, expecteNumeral)
         }

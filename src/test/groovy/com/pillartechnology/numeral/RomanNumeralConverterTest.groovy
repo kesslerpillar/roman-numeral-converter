@@ -21,7 +21,7 @@ class RomanNumeralConverterTest {
          444 : 'CDXLIV', 500: 'D',
          667 : 'DCLXVII', 900: 'CM',
          944 : 'CMXLIV', 1000: 'M',
-         1444: 'MCDXLIV', 4999: 'MMMMCMXCIX',
+         1444: 'MCDXLIV', 3999: 'MMMCMXCIX',
         ].each { int expectedNumber, String numeral ->
             assertConversion(expectedNumber, numeral)
         }
