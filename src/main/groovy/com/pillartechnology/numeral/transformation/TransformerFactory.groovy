@@ -42,6 +42,21 @@ class TransformerFactory {
 
     static AbstractTransformer createOneThousand() { ONE_THOUSAND }
 
+    static List<NumeralTransformer> numeralConversionList() {
+        [createFour(), createNine(), createForty(), createNinety(),
+         createFourHundred(), createNineHundred(),
+         createOne(), createFive(), createTen(), createFifty(),
+         createOneHundred(), createFiveHundred(), createOneThousand()]
+    }
+
+    static List<NumberTransformer> numberConversionList() {
+        [createOneThousand(), createNineHundred(), createFiveHundred(),
+         createFourHundred(), createOneHundred(), createNinety(),
+         createFifty(), createForty(), createTen(), createNine(),
+         createFive(), createFour(), createOne(),
+        ]
+    }
+
     private static AbstractTransformer create(String numeral, int number) {
         new AbstractTransformer() {
             @Override

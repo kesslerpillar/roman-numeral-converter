@@ -1,20 +1,17 @@
 package com.pillartechnology.numeral
 
+import com.pillartechnology.numeral.transformation.Transformation
+import com.pillartechnology.numeral.transformation.TransformerFactory
+
 class NumberConverter {
 
     static String toNumeral(int number) {
-        String numeral = ''
+        Transformation transformation = new Transformation('', number)
 
-        while (number >= 1000) {
-            number -= 1000
-            numeral += 'M'
+        TransformerFactory.numberConversionList().each { transformer ->
+            transformation = transformer.numberToNumeral(transformation)
         }
 
-        while (number >= 900) {
-            number -= 900
-            numeral += 'CM'
-        }
-
-        numeral
+        transformation.part
     }
 }

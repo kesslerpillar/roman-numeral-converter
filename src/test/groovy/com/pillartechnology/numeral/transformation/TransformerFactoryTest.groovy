@@ -2,6 +2,7 @@ package com.pillartechnology.numeral.transformation
 
 import org.junit.Test
 
+
 class TransformerFactoryTest {
 
     @Test
@@ -67,6 +68,31 @@ class TransformerFactoryTest {
     @Test
     void createOneThousand() {
         assertTransformer(TransformerFactory.createOneThousand(), 'M', 1000)
+    }
+
+    @Test
+    void numeralConversionList() {
+        def expected = [TransformerFactory.createFour(), TransformerFactory.createNine(),
+                        TransformerFactory.createForty(), TransformerFactory.createNinety(),
+                        TransformerFactory.createFourHundred(), TransformerFactory.createNineHundred(),
+                        TransformerFactory.createOne(), TransformerFactory.createFive(),
+                        TransformerFactory.createTen(), TransformerFactory.createFifty(),
+                        TransformerFactory.createOneHundred(), TransformerFactory.createFiveHundred(),
+                        TransformerFactory.createOneThousand()]
+        assert expected == TransformerFactory.numeralConversionList()
+    }
+
+    @Test
+    void numberConversionList() {
+        def expected = [TransformerFactory.createOneThousand(), TransformerFactory.createNineHundred(),
+                        TransformerFactory.createFiveHundred(), TransformerFactory.createFourHundred(),
+                        TransformerFactory.createOneHundred(), TransformerFactory.createNinety(),
+                        TransformerFactory.createFifty(), TransformerFactory.createForty(),
+                        TransformerFactory.createTen(), TransformerFactory.createNine(),
+                        TransformerFactory.createFive(), TransformerFactory.createFour(),
+                        TransformerFactory.createOne(),
+        ]
+        assert expected == TransformerFactory.numberConversionList()
     }
 
     private static void assertTransformer(AbstractTransformer transformer, String expectedNumeral, int expectedNumber) {
