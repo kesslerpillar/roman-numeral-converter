@@ -3,10 +3,7 @@ package com.pillartechnology.numeral
 import com.pillartechnology.numeral.conversion.NumberConverter
 import com.pillartechnology.numeral.conversion.NumeralConverter
 import com.pillartechnology.numeral.exception.NumberConversionException
-import com.pillartechnology.numeral.transformation.Transformation
-import com.pillartechnology.numeral.transformation.TransformerFactory
 import com.pillartechnology.numeral.validation.NumberValidator
-
 
 class ConverterApplication {
 
