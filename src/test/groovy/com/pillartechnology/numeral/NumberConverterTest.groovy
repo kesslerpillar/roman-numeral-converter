@@ -29,6 +29,6 @@ class NumberConverterTest {
     }
 
     static private void assertConversion(int number, String expectedNumeral) {
-        assert expectedNumeral == NumberConverter.toNumeral(number)
+        assert expectedNumeral == Converter.toNumeral(number)
     }
 }

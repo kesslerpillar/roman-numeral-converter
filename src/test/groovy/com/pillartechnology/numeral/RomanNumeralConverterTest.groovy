@@ -34,6 +34,6 @@ class RomanNumeralConverterTest {
     }
 
     static private void assertConversion(int expectedNumber, String numeral) {
-        assert expectedNumber == RomanNumeralConverter.toNumber(numeral)
+        assert expectedNumber == Converter.toNumber(numeral)
     }
 }
