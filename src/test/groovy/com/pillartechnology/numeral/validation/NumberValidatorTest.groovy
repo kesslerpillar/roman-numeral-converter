@@ -4,28 +4,30 @@ import org.junit.Test
 
 class NumberValidatorTest {
 
+    NumberValidator validator = new NumberValidator()
+
     @Test
     void validateValidNumber() {
-        assert new NumberValidator().isValid(10)
+        assert validator.isValid(10)
     }
 
     @Test
     void validateZero() {
-        assert !new NumberValidator().isValid(0)
+        assert !validator.isValid(0)
     }
 
     @Test
     void validateNegativeNumber() {
-        assert !new NumberValidator().isValid(-1)
+        assert !validator.isValid(-1)
     }
 
     @Test
     void validateMaxNumber() {
-        assert new NumberValidator().isValid(3999)
+        assert validator.isValid(3999)
     }
 
     @Test
     void validateFourThousand() {
-        assert !new NumberValidator().isValid(4000)
+        assert !validator.isValid(4000)
     }
 }
