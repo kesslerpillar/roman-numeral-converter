@@ -1,8 +1,10 @@
-package com.pillartechnology.numeral
+package com.pillartechnology.numeral.conversion
 
 import org.junit.Test
 
 class NumberConverterTest {
+
+    private static final NumberConverter converter = new NumberConverter()
 
     @Test
     void convertToRomanNumeral() {
@@ -28,6 +30,6 @@ class NumberConverterTest {
     }
 
     static private void assertConversion(int number, String expectedNumeral) {
-        assert expectedNumeral == Converter.toNumeral(number)
+        assert expectedNumeral == converter.convert(number)
     }
 }

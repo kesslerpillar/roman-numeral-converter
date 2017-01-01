@@ -6,26 +6,26 @@ class NumberValidatorTest {
 
     @Test
     void validateValidNumber() {
-        assert new NumberValidator().validate(10)
+        assert new NumberValidator().isValid(10)
     }
 
     @Test
     void validateZero() {
-        assert !new NumberValidator().validate(0)
+        assert !new NumberValidator().isValid(0)
     }
 
     @Test
     void validateNegativeNumber() {
-        assert !new NumberValidator().validate(-1)
+        assert !new NumberValidator().isValid(-1)
     }
 
     @Test
     void validateMaxNumber() {
-        assert new NumberValidator().validate(3999)
+        assert new NumberValidator().isValid(3999)
     }
 
     @Test
     void validateFourThousand() {
-        assert !new NumberValidator().validate(4000)
+        assert !new NumberValidator().isValid(4000)
     }
 }
