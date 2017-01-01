@@ -10,7 +10,7 @@ class NumeralValidator {
     }
 
     private Matcher containsValidRomanNumeralCharacters(String numeral) {
-        numeral =~ /^[MmDdCcLlXxVvIi]+$/
+        numeral =~ /^(?i)[MDCLXVI]+$/
     }
 
     private boolean numeralContainsCharacters(String numeral) {

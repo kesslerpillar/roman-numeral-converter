@@ -74,7 +74,6 @@ class ConverterApplicationTest {
         runToNumber(numeral)
     }
 
-
     private void runToNumeral(int number, String expectedNumeral = '') {
         mockNumberConverter.use {
             mockNumeralConverter.use {
