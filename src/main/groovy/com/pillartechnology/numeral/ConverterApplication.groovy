@@ -9,10 +9,10 @@ import com.pillartechnology.numeral.validation.NumeralValidator
 
 class ConverterApplication {
 
-    private NumberConverter numberConverter
-    private NumeralConverter numeralConverter
-    private NumberValidator numberValidator
-    private NumeralValidator numeralValidator
+    private final NumberConverter numberConverter
+    private final NumeralConverter numeralConverter
+    private final NumberValidator numberValidator
+    private final NumeralValidator numeralValidator
 
     private ConverterApplication(NumberConverter numberConverter, NumeralConverter numeralConverter,
                                  NumberValidator numberValidator, NumeralValidator numeralValidator) {
@@ -23,11 +23,8 @@ class ConverterApplication {
     }
 
     static ConverterApplication instance() {
-        def numberConverter = new NumberConverter()
-        def numeralConverter = new NumeralConverter()
-        def numberValidator = new NumberValidator()
-        def numeralValidator = new NumeralValidator()
-        new ConverterApplication(numberConverter, numeralConverter, numberValidator, numeralValidator)
+        new ConverterApplication(new NumberConverter(), new NumeralConverter(),
+                new NumberValidator(), new NumeralValidator())
     }
 
     String toNumeral(int number) {
